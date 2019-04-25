@@ -28,7 +28,7 @@ extern keymap_config_t keymap_config;
 
 #define LYR1 MO(_1)
 #define LYR2 MO(_2)
-#define LYRG MO(_GAMING)
+#define LYRG TG(_GAMING)
 #define LYRG2 MO(_GAMING2)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -97,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,----------------------------------,                             ,----------------------------------,
  * |      | TAB  |  mup |      |      |                             | VOL+ |      |  up  |      | PgUp |
  * |------+------+------+------+------|                             |------+------+------+------+------|
- * |SHFTAB| mleft| mdown|mright|      |                             | MUTE | left | down |right | PgDn |
+ * |SHFTAB| mleft| mdown|mright|GAMING|                             | MUTE | left | down |right | PgDn |
  * |------+------+------+------+------|                             |------+------+------+------+------|
  * |      |   «  |  ||  |   »  |      |                             | VOL- |  /   |  \   |  ?   |  |   |
  * |------+------+------+-------------,                             ,-------------+------+------+------,
@@ -116,7 +116,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_2] = LAYOUT( \
   ____,KC_TAB, KC_MU, ____,  ____,                          KC_VOLU, ____,    KC_UP,   ____,     KC_PGUP,   \
-  LSFT(KC_TAB), KC_ML, KC_MD, KC_MR, ____,                  KC_MUTE, KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGDOWN, \
+  LSFT(KC_TAB), KC_ML, KC_MD, KC_MR, LYRG,                  KC_MUTE, KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGDOWN, \
   ____, KC_MEDIA_PREV_TRACK,KC_MEDIA_PLAY_PAUSE,KC_MEDIA_NEXT_TRACK,____,KC_VOLD, KC_SLSH, KC_BSLS, KC_QUES,  KC_PIPE,\
         ____,  ____,                                                          KC_MB1,  KC_MB2,              \
                                    ____, ____,  ____, ____,                                                 \
@@ -125,7 +125,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 /* Gaming
  * ,----------------------------------,                             ,----------------------------------,
- * | TAB  |  Q   | W    |  E   |  R   |                             |      |      |      |      |      |
+ * | TAB  |  Q   | W    |  E   |  R   |                             |      |      |      |      | LYR1 |
  * |------+------+------+------+------|                             |------+------+------+------+------|
  * |SHIFT |  A   | S    |  D   |  F   |                             |      |      |      |      |      |
  * |------+------+------+------+------|                             |------+------+------+------+------|
@@ -138,20 +138,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                      |      |      |                             |      |      |
  *                      '------+------'                             '------+------'
  *                                    '------+------' '------+------'
- *                                    |      |      | |      |      |
+ *                                    |  1   | 2    | |      |      |
  *                                    '------+------' '------+------'
- *                                    |      |      | |      |      |
+ *                                    |  3   |  G   | |      |      |
  *                                    '------+------' '------+------'
  */
 
 [_GAMING] = LAYOUT( \
-  KC_TAB,   KC_Q,  KC_W,   KC_E,  KC_R,               ____,    ____,     ____,    ____,    ____,       \
+  KC_TAB,   KC_Q,  KC_W,   KC_E,  KC_R,               ____,    ____,     ____,    ____,    LYRG,       \
   KC_LSFT,  KC_A,  KC_S,   KC_D,  KC_F,               ____,    ____,     ____,    ____,    ____,       \
   KC_LCTL,  KC_Z,  KC_X,   KC_C,  KC_V,               ____,    ____,     ____,    ____,    ____,       \
            ____, ____,                                                   ____,    ____,                \
                                    LYRG2,KC_SPC,____, ____,                                            \
-                                   ____, ____,  ____, ____,                                            \
-                                   ____, ____,  ____, ____                                             \
+                                   KC_1, KC_2,  ____, ____,                                            \
+                                   KC_3, KC_G,  ____, ____                                             \
 ),
 /* Gaming2
  * ,----------------------------------,                             ,----------------------------------,
@@ -164,7 +164,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *        |      |      |                                                         |      |      |
  *        '------+------'-------------'                             '-------------'------+------'
  *                      |      |      |                             |      |      |
- *                      |      |      |                             |      |      |
+ *                      |TAKEN |      |                             |      |      |
  *                      |      |      |                             |      |      |
  *                      '------+------'                             '------+------'
  *                                    '------+------' '------+------'
@@ -175,10 +175,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_GAMING2] = LAYOUT( \
-  KC_TAB,   ____,  ____,   ____,  ____,               ____,    ____,     ____,    ____,    ____,       \
-  KC_LSFT,  ____,  ____,   ____,  KC_G,               ____,    ____,     ____,    ____,    ____,       \
-  KC_LCTL,  ____,  ____,   ____,  ____,               ____,    ____,     ____,    ____,    ____,       \
-           ____, ____,                                                   ____,    ____,                \
+  KC_1,  ____,  ____,   ____,  ____,               ____,    ____,     ____,    ____,    ____,       \
+  KC_2,  ____,  ____,   ____,  KC_G,               ____,    ____,     ____,    ____,    ____,       \
+  KC_3,  ____,  ____,   ____,  ____,               ____,    ____,     ____,    ____,    ____,       \
+         ____, ____,                                                  ____,    ____,                \
                                    ____, ____,  ____, ____,                                            \
                                    ____, ____,  ____, ____,                                            \
                                    ____, ____,  ____, ____                                             \
