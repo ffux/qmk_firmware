@@ -1,5 +1,7 @@
 A fork of QMK specifically for firmware changes related to [my 4x5 handwire](https://github.com/ffux/qmk_firmware/tree/master/keyboards/handwired/dactyl_manuform/4x5/keymaps/ffuxmap)
 ![cute pic of my board](https://i.imgur.com/U8iQGEX.jpg)
+![cute pic of my board](https://raw.githubusercontent.com/ffux/qmk_firmware/master/images/LEDs.png)
+![cute pic of my board](https://raw.githubusercontent.com/ffux/qmk_firmware/master/images/Underglow.png)
 
 3d files curtesy of [tshort](https://github.com/tshort/dactyl-keyboard/tree/master/things)
 
